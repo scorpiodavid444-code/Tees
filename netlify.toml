@@ -1,0 +1,8 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[dev]
+  publish = "public"
+  port = 8888
+  autoLaunch = true

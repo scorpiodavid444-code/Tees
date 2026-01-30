@@ -1,0 +1,27 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets"        
+public_folder: "/assets"     
+
+collections:
+  - name: "tshirts"
+    label: "T-shirts"
+    folder: "content/tshirts"
+    create: true
+    slug: "{{slug}}"
+
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+
+      - { label: "Price", name: "price", widget: "number", value_type: "float" }
+
+      - label: "Available Sizes"
+        name: "sizes"
+        widget: "list"
+        default: ["S", "M", "L", "XL"]
+
+      - { label: "Image", name: "image", widget: "image" }
+
+      - { label: "In Stock", name: "in_stock", widget: "boolean", default: true }
