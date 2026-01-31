@@ -3,7 +3,7 @@ backend:
   branch: main
 
 media_folder: "public/assets"
-public_folder: "/assets"    
+public_folder: "public/assets"    
 
 collections:
   - name: "tshirts"
@@ -20,7 +20,7 @@ collections:
       - label: "Available Sizes"
         name: "sizes"
         widget: "list"
-        default: ["S", "M", "L", "XL"]
+        default: ["S", "M", "L", "XL", "XXL"]
 
       - { label: "Image", name: "image", widget: "image" }
 
