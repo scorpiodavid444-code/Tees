@@ -75,13 +75,12 @@ ScrollReveal().reveal(".service__btn", {
 const swipeHint = document.querySelector(".swipe-hint");
 
 swiper.on("touchStart", () => {
-  if (swipeHint) swipeHint.style.display = "none";
+  if (swipeHint) swipeHint.style.opacity = "0.4";
 });
 
-swiper.on("sliderMove", () => {
-  if (swipeHint) swipeHint.style.display = "none";
+swiper.on("touchEnd", () => {
+  if (swipeHint) swipeHint.style.opacity = "1";
 });
-
 
 
 const instagram = document.querySelector(".instagram__images");
@@ -143,6 +142,8 @@ Delivery Location:`
 
 
 window.products = [];
+
+
 
 
 

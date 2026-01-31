@@ -200,6 +200,11 @@ header::before {
   width: 100%;
 }
 
+.swipe-hint {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 .swiper-slide {
   max-width: 45rem;
   display: flex;
