@@ -17,6 +17,7 @@ navLinks.addEventListener("click", () => {
   menuBtnIcon.setAttribute("class", "ri-menu-4-line");
 });
 
+
 const scrollRevealOption = {
   distance: "50px",
   origin: "bottom",
@@ -71,6 +72,15 @@ ScrollReveal().reveal(".service__btn", {
   delay: 1500,
 });
 
+const swipeHint = document.querySelector(".swipe-hint");
+
+swiper.on("touchStart", () => {
+  if (swipeHint) swipeHint.style.display = "none";
+});
+
+swiper.on("sliderMove", () => {
+  if (swipeHint) swipeHint.style.display = "none";
+});
 
 
 
@@ -133,7 +143,6 @@ Delivery Location:`
 
 
 window.products = [];
-
 
 
 
