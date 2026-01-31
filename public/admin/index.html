@@ -8,17 +8,28 @@
   <body>
     <!-- Netlify Identity -->
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <script>
+      function loadCMS() {
+        const script = document.createElement("script");
+        script.src =
+          "https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js";
+        document.body.appendChild(script);
+      }
+
       if (window.netlifyIdentity) {
         window.netlifyIdentity.on("init", user => {
           if (!user) {
-            window.netlifyIdentity.open(); // Google login appears here
+            window.netlifyIdentity.open();
+          } else {
+            loadCMS(); // ✅ CMS loads ONLY after login
           }
+        });
+
+        window.netlifyIdentity.on("login", () => {
+          loadCMS(); // ✅ also load CMS after successful login
         });
       }
     </script>
-
-    <!-- Decap CMS -->
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </body>
 </html>
